@@ -27,6 +27,23 @@ public class ArrayTest {
 		sumup();
 		
 		finalMaxMin(nums);
+		
+		float[] salaries= { 234.324f, 23423.23f, 324.3f, 32423.34f };
+		//{235.324f, 23424.23f ,325.3f , 32424.34f};
+		salaries[0] = salaries[0] +10;
+		System.out.println(salaries[0]);
+		salaries[1] = salaries[1] +10;
+		System.out.println(salaries[1]);
+		salaries[2] = salaries[2] +10;
+		System.out.println(salaries[2]);
+		salaries[3] = salaries[3] +10;
+		System.out.println(salaries[3]);
+		 for (int i = 0; i < salaries.length; i++) {
+			 salaries[i] = salaries[i] +10;
+			 System.out.println(salaries[i]);
+			
+			
+		}
 	}
 		
 
