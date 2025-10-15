@@ -39,7 +39,18 @@ public class ArrayTest {
 		slice(scores, 10, 0);
 	}
  
-	private static int[] slice(int[] arr, int start, int end ) {
+	private static int[] slice(int[] arr, int start, int end ) { 
+		
+		
+		if (arr == null) {
+			return null;
+		}
+		if (start < 0 || end < 0 || start >= arr.length || end >= arr.length) {
+			return null;
+		}
+		if (start> end) {
+			return null;
+		}
 		// TODO Auto-generated method stub
 		int[] result = new int [end - start +1]; 
 		result[0] = arr[start];
@@ -70,14 +81,14 @@ public class ArrayTest {
 	
 	}
 
-	private static void swithValues(int[] arr, int index1, int index2) {
+	public static void swithValues(int[] arr, int index1, int index2) {
 		// TODO Auto-generated method stub
 		if (arr ==null) {
 			return;
 		}
 		//>= means greater or equal
 		// the index of the last element in array is arr.length -1
-		 if (index1 > arr.length || index2 < arr.length) {
+		 if (index1 >= arr.length || index2 >= arr.length) {
 			return;
 		}
 			
