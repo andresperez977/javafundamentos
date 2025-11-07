@@ -4,8 +4,20 @@ public class Celestianbody {
 
 	protected double mass=12;
 	public float size=23;
-	private String name="pluton";
-	public double getMass() {
+    protected float radius;
+    String name="pluton";
+
+    public Celestianbody(double mass, String name) {
+    }
+
+    public Celestianbody(String nameOf) {
+    }
+
+    public Celestianbody() {
+
+    }
+
+    public double getMass() {
 		return mass;
 	}
 	public void setMass(double mass) {
