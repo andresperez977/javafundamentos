@@ -1,5 +1,7 @@
 package basics;
 
+
+
 import oopmodeling.Celestianbody;
 import oopmodeling.Planet;
 import oopmodeling.Star;
@@ -8,8 +10,14 @@ public class ConversionTest {
 public static void main(String[] args) {
 	
 	primitiveConversion();
-	
+	objectConversion();
+
+			
+}
+private static void objectConversion() {
+	// TODO Auto-generated method stub
 	//Polymorphish
+	
 	Planet p1 = new Planet();
 	// A planet is not a star, we can not assign a planet object to a star object
 	//Star s1 = (Star) new Planet;
@@ -30,9 +38,16 @@ public static void main(String[] args) {
 	//create an array of Object of size 20
 	// 2 assign each posicion of the array with an object of planet 
 	// 3 convert the whole array explicity to an array of planet 
-	
+	Object[] objs = new Object[20];
+	objs[0]=new Star();
+	objs[0]= new Planet();
+	for (int i = 0; i < objs.length; i++) {
+	    objs[i] = new Planet();
+	}
+	//
+	Planet[] ps= (Planet[]) objs;
+ps[0].getName();
 	polymorphisMethod(p2);
-			
 }
 private static void polymorphisMethod(Celestianbody cb) {
 	// TODO Auto-generated method stub
