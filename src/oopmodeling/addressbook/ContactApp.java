@@ -1,14 +1,60 @@
 package oopmodeling.addressbook;
+
+import java.util.Scanner;
+
 /**
  * 
 * @author Andrés
 * 26 nov 2025
  */
 public class ContactApp {
+ final static AddressBook addressBook= new AddressBook();
+ final static Scanner scanner = new Scanner(System.in);
+
+ 
 public static void main(String[] args) {
-	AddressBook addressBook= new AddressBook();
-	addressBook.showContact();
-	addressBook.addContact(null);
+	byte option = 4;
+	while (true) {
+		showMenu();
+		
+		option = scanner.nextByte();
+		System.out.println(option );
+		
+		if (option == 4) {
+			break;
+		}
+		else if (option == 1) {
+			addContact();
+		}
+	}
 	
+	
+}
+
+
+private static void addContact() {
+	// TODO Auto-generated method stub
+	System.out.println("---add contact to your address book-----");
+	// 1 The user introduce the number, name and other information about the contact
+	System.out.println("Please enter the name ");
+	String name = scanner.nextLine();
+	System.out.println(name);
+	String phone = scanner.nextLine();
+	System.out.println(phone);
+	String email= scanner.nextLine();
+	System.out.println(email);
+	//2 Create an object of "Contact" encapsulating all the data passed in the first step 
+	Contact newContact = new Contact(name, phone, email);
+	//3 Add the new object to the contact array
+	addressBook.addContact(newContact);
+}
+
+
+private static void showMenu() {
+	// TODO Auto-generated method stub
+	System.out.println("1, Add contact");
+	System.out.println("2, Show contacts");
+	System.out.println("3, Remove contact");
+	System.out.println("4, Exit ");
 }
 }
