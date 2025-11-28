@@ -3,7 +3,7 @@ package oopmodeling.addressbook;
 import java.util.Scanner;
 
 /**
- * 
+ * The class used to interact with users.
 * @author Andrés
 * 26 nov 2025
  */
@@ -26,8 +26,20 @@ public static void main(String[] args) {
 		else if (option == 1) {
 			addContact();
 		}
+		else if (option == 2) {
+			showContacts();
+		}
+		else {
+			removeContact();
+		}
 	}
 	
+	
+}
+
+
+private static void showContacts() {
+	// TODO Auto-generated method stub
 	
 }
 
@@ -47,6 +59,12 @@ private static void addContact() {
 	Contact newContact = new Contact(name, phone, email);
 	//3 Add the new object to the contact array
 	addressBook.addContact(newContact);
+	System.out.println("Contacto added");
+}
+private static void removeContact() {
+    System.out.print("Introduce the name of the contact to remove: ");
+    String name = scanner.nextLine();
+    addressBook.removeContact(name);
 }
 
 

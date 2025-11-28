@@ -6,11 +6,14 @@ package oopmodeling.addressbook;
  */
 
 import java.util.Scanner;
-
+/** This class is ued to manage a list of contact objects
+ * 
+ */
 import datastructure.FlexibleArray;
 
 public class AddressBook {
 // Attributes
+	// This is container for the list of contact objects
 	 protected FlexibleArray<Contact> contacts;
 	protected Scanner scanner;
 	 //behaves
@@ -20,7 +23,7 @@ public class AddressBook {
 	 }
 	public void addContact(Contact contact) {
 	}	
-	public void removeConact(String name) {
+	public void removeContact(String name) {
 	}	
 	
 }
