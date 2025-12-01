@@ -56,4 +56,7 @@ public FlexibleArray() {
     public int size() {
         return size;
     }
+    public T[] getAll() {
+    	return elements;
+    }
 }
