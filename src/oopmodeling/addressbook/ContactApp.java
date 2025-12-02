@@ -62,7 +62,8 @@ private static void addContact() {
 	System.out.println("Contacto added");
 }
 private static void removeContact() {
-    System.out.print("Introduce the name of the contact to remove: ");
+	System.out.println("---remove contact from your adress book----");
+    System.out.print("Introduce de name ");
     String name = scanner.nextLine();
     addressBook.removeContact(name);
 }

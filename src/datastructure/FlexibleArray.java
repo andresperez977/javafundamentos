@@ -49,6 +49,9 @@ public FlexibleArray() {
     	elements[i]= null;
     	//elements[i]=elements[i+1];
     	//elements[i+1]=elements[i+2];
+    	for (int j = 0; j < 5; j++) {
+			elements[i + 3] = elements[i+4];
+		}
     	size--;
     }
     
@@ -56,7 +59,7 @@ public FlexibleArray() {
     public int size() {
         return size;
     }
-    public T[] getAll() {
-    	return elements;
+    public T get(int index) {
+    	return elements[index];
     }
 }

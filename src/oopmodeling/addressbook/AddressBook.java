@@ -29,9 +29,10 @@ public class AddressBook {
 		contacts.add(contact);
 	}	
 	public boolean removeContact(String name) {
-		 Contact[] eles= contacts.getAll();
+		 //Contact[] eles= contacts.getAll();
 		 for (int i = 0; i < contacts.size(); i++) {
-			Contact contact = eles[i];
+			if(contacts.get(i).getName().equals(name)) {}
+			
 		}
 		contacts.remove(0);
 		return false;
