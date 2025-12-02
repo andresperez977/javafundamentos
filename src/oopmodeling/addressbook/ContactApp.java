@@ -40,7 +40,7 @@ public static void main(String[] args) {
 
 private static void showContacts() {
 	// TODO Auto-generated method stub
-	
+	addressBook.showContact();
 }
 
 
@@ -49,10 +49,15 @@ private static void addContact() {
 	System.out.println("---add contact to your address book-----");
 	// 1 The user introduce the number, name and other information about the contact
 	System.out.println("Please enter the name ");
+	
+	scanner.nextLine();
+	
 	String name = scanner.nextLine();
 	System.out.println(name);
+	System.out.println("Please enter the phone number ");
 	String phone = scanner.nextLine();
 	System.out.println(phone);
+	System.out.println("Please enter the email ");
 	String email= scanner.nextLine();
 	System.out.println(email);
 	//2 Create an object of "Contact" encapsulating all the data passed in the first step 

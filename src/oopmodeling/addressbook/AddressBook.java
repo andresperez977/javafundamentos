@@ -22,7 +22,9 @@ public class AddressBook {
 	protected Scanner scanner;
 	 //behaves
 	 public void showContact() {
-		 
+		 for (int i = 0; i < contacts.size(); i++) {
+			 System.out.println(contacts.get(i).toString());
+		 }
 		 
 	 }
 	public void addContact(Contact contact) {
