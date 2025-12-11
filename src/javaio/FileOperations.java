@@ -12,9 +12,17 @@ public static void main(String[] args) {
 	createPath(directory);
 	
 	createFile(file);
+	
+	createAbsolutePath();
 	//create directory using absolute path
 	File absoluteDir = new File(System.getProperty("user.dir") + "/logs/user.log");
 	absoluteDir.mkdirs();
+}
+
+private static void createAbsolutePath() {
+	// TODO Auto-generated method stub
+	File absoluteDir = new File(System.getProperty("user.dir") + "/logs/user.log");
+	absoluteDir.mkdirs();  
 }
 
 private static void createPath(File file) {

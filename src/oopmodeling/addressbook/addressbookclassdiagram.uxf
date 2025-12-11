@@ -1,1 +1,94 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram></umlet_diagram>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>400</y>
+      <w>270</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::oopmodeling.address.book
+Class:AddressBook.java
+{Some Properties}
+--
+Properties:
+contacts:FlexibleArray&lt;contact&gt;
+scanner:Scanner
+--
+Operations
+/addContact(Contact)
+/showContact()
+/AddressBook()
+/removeContact(String)
+--
+Responsibilities
+-- Resp1:administración de los contactos
+*-- Resp2*:mostrar los contactos</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>0</y>
+      <w>400</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::oopmodeling.addressbook
+Class:Contact.java
+{Some Properties}
+--
+Properties:
+name:String
+surname:String
+phoneNumber:String
+email:String
+--
+Operations
+/Contact(String name,String phone,String email)
+/getName():String
+/setName(String)
+/setSurname(String)
+/getPhoneNumber():String
+/setPhoneNumber(String)
+/getEmail():String
+/setEmail(String)
+--
+Responsibilities
+-- Resp1:información de un contacto
+*-- Resp2:datos de un contacto</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>330</y>
+      <w>350</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::oopmodeling.addressbook
+Class:ContactApp.java
+{Some Properties}
+--
+Properties:
+addressBook:AddressBook(static)
+scanner:Scanner(static)
+--
+Operations
+/showMenu()
+/addContact()
+/showContact()
+/removeContact()
+--
+Responsibilities
+-- Resp1:recoge informacion para crear nuevos usuarios
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
