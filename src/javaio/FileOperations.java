@@ -1,5 +1,6 @@
 package javaio;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -21,9 +22,22 @@ public class FileOperations {
 		writeFile();
 
 		readFile();
+		
+		BufferedReader();
 		// create directory using absolute path
 		File absoluteDir = new File(System.getProperty("user.dir") + "/logs/user.log");
 		absoluteDir.mkdirs();
+	}
+
+	private static void BufferedReader() {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br =
+					new BufferedReader(new FileReader("log.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
 	}
 
 	private static void readFile() {
@@ -43,8 +57,20 @@ public class FileOperations {
 				System.out.println((char) c);
 
 			}
+			
 			reader.close();
 			reader = new FileReader("log.txt");
+			System.out.println("the second");
+			c=reader.read();
+			while (c!=-1) {//check if we have reached the end of the file
+				//havent reached the end
+				System.out.println((char)c);
+				c=reader.read();
+				
+			}
+			reader.close();
+			reader = new FileReader("log.txt");
+			System.out.println("the third reading");
 			// Execute the commands inside the "do" body first,
 			// then check the condition,if it is true ,repeat
 			// the execution
