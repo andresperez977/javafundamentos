@@ -1,6 +1,7 @@
 package javaio;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,21 +23,55 @@ public class FileOperations {
 		writeFile();
 
 		readFile();
-		
+		bufferedWriter();
 		BufferedReader();
+		
 		// create directory using absolute path
 		File absoluteDir = new File(System.getProperty("user.dir") + "/logs/user.log");
 		absoluteDir.mkdirs();
 	}
 
+	private static void bufferedWriter() {
+		// TODO Auto-generated method stub
+		try {
+			BufferedWriter writer= 
+					new BufferedWriter(new FileWriter("contacts.txt"));
+			writer.write("punteria" + ";" + "puntero@g");
+			writer.newLine();
+			writer.write("puntero" + ";" + "puntero@g");
+			writer.newLine();
+			writer.write("putero" + ";" + "puntero@g");
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private static void BufferedReader() {
 		// TODO Auto-generated method stub
 		try {
+			System.out.println();
+			System.out.println("buffered reader");
+			//wrap an instance of @link{FileReader} in a instance of @link{BufferedReader}
+			//so we can manipulate the data in another way in our case
+			//reading the data line by line
 			BufferedReader br =
-					new BufferedReader(new FileReader("log.txt"));
+					new BufferedReader(new FileReader("contacts.txt"));
+			//read a line from the file
+			System.out.println(br.readLine());
+			String data;
+			do {
+				//define what we want to do 
+				//read a line 
+				 data=br.readLine();
+				 System.out.println(data);
+			} while (data !=null);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			// TODO: handle exception
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
