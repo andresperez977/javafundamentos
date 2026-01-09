@@ -5,11 +5,15 @@ package oopmodeling.addressbook;
 * 26 nov 2025
  */
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 /** This class is used to manage a list of contact objects
  * 
  */
 import datastructure.FlexibleArray;
+import utils.FileUtil;
 
 public class AddressBook {
 // Attributes
@@ -29,7 +33,11 @@ public class AddressBook {
 	 }
 	public void addContact(Contact contact) {
 		contacts.add(contact);
-	}	
+		
+		FileUtil.writeToFile(contact.getName() + ";" + contact.getEmail() ,"contacts.txt");
+	}	 
+	
+	
 	public boolean removeContact(String name) {
 		 //Contact[] eles= contacts.getAll();
 		 for (int i = 0; i < contacts.size(); i++) {
