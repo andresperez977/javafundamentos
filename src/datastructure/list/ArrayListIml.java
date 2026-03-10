@@ -1,5 +1,9 @@
 package datastructure.list;
-
+/**
+ * 
+* @author Andrés
+* 10 mar 2026
+ */
 public class ArrayListIml<E> implements List<E>{
 
 	@Override

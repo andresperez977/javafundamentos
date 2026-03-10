@@ -4,7 +4,7 @@ import oopmodeling.Planet;
 
 // The class represent 
 
-
+//<T>GENERIC type parameter which means we can store any type of data in a Node class
 public class Node<T> {
 
 	
