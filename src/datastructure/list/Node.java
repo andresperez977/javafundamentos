@@ -8,7 +8,7 @@ import oopmodeling.Planet;
 public class Node<T> {
 
 	
-	private Node next;
+	protected Node next;
 	
 	private T data;
 
