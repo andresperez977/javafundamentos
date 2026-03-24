@@ -2,11 +2,13 @@ package datastructure;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import oopmodeling.Planet;
-import sun.jvm.hotspot.code.NMethod;
+
 
 public class BuiltinDataStructure {
 public static void main(String[] args) {
@@ -32,8 +34,14 @@ public static void main(String[] args) {
 	callstack.push(10);
 	callstack.push(2);
 	//used to read the element on the top of the stack without eliminating 
-	 NMethod N               BrokenBarrierException   
-	
-	
+	 System.out.println(callstack.peek());  
+	 System.out.println(callstack.pop());  
+	 System.out.println(callstack.peek());  
+	 //first in first out 
+	 Queue<Integer> queue = new ConcurrentLinkedQueue<>();
+	 queue.add(123);
+	 queue.add(13);
+	 queue.add(12300);
+	System.out.println(queue.poll());
 }
 }
