@@ -3,8 +3,10 @@ package datastructure;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.concurrent.BrokenBarrierException;
 
 import oopmodeling.Planet;
+import sun.jvm.hotspot.code.NMethod;
 
 public class BuiltinDataStructure {
 public static void main(String[] args) {
@@ -30,7 +32,8 @@ public static void main(String[] args) {
 	callstack.push(10);
 	callstack.push(2);
 	//used to read the element on the top of the stack without eliminating 
-	System.out.println(callstack.peek());
+	 NMethod N               BrokenBarrierException   
+	
 	
 }
 }
