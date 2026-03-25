@@ -1,9 +1,12 @@
 package datastructure;
 
+import java.nio.channels.NonWritableChannelException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.TreeMap;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -43,5 +46,18 @@ public static void main(String[] args) {
 	 queue.add(13);
 	 queue.add(12300);
 	System.out.println(queue.poll());
+	
+	Queue<String>printerTasks = new LinkedList<>();
+	printerTasks.add("task 1");
+	printerTasks.add("task 2");
+	printerTasks.add("task 3");
+	System.out.println(printerTasks.peek());
+	System.out.println(printerTasks.poll());
+	
+	TreeMap<String, Planet> tree;
+	HashMap<String, User > users = new HashMap<>();
+	users.put("Ana", new User());
+	users.put("Pablo", new User());
+	
 }
 }
