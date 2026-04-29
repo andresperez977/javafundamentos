@@ -5,7 +5,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Iterator;
 
+
+
 import oopmodeling.addressbook.AddressBook;
+import oopmodeling.addressbook.Contact;
+
 import java.lang.annotation.Annotation;
 
 public class ReflectionTest {
@@ -14,8 +18,20 @@ public class ReflectionTest {
 		Class<AddressBook> cls1 = AddressBook.class;
 		Class<AddressBook> cls2 = (Class<AddressBook>) new AddressBook().getClass();
 		Class<?> cls3 = Class.forName("oopmodeling.addressbook.AddressBook");
-
 		inspectClass(cls1);
+		
+		AddressBook addressBook = new AddressBook();
+		manipulateObject(addressBook);
+	}
+ 
+	private static void manipulateObject(AddressBook addressBook) {
+		Class<?> cls = addressBook.getClass();
+		Field[] fields =cls.getDeclaredFields();
+		try {
+			Field field =cls.getDeclaredField( "contacts  " );
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	private static void inspectClass(Class<AddressBook> cls1) {
