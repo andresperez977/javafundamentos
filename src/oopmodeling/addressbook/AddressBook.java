@@ -16,7 +16,13 @@ import datastructure.FlexibleArray;
 import utils.FileUtil;
 
 public class AddressBook {
-// Attributes
+public FlexibleArray<Contact> getContacts() {
+		return contacts;
+	}
+	public void setContacts(FlexibleArray<Contact> contacts) {
+		this.contacts = contacts;
+	}
+	// Attributes
 	public AddressBook() {
 		contacts = new FlexibleArray<Contact>();
 	}

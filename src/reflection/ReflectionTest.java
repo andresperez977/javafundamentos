@@ -1,6 +1,7 @@
 package reflection;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Iterator;
@@ -22,13 +23,42 @@ public class ReflectionTest {
 		
 		AddressBook addressBook = new AddressBook();
 		manipulateObject(addressBook);
+		invokeMethodOfAnObject(addressBook);
 	}
  
+	private static void invokeMethodOfAnObject(Object obj) {
+		Class<?> cls = obj.getClass();
+					try {
+						
+						 Method method = cls.getDeclaredMethod(null);
+						 method.invoke(obj, null);
+					} catch (NoSuchMethodException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (SecurityException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (InvocationTargetException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		
+	}
+
 	private static void manipulateObject(AddressBook addressBook) {
 		Class<?> cls = addressBook.getClass();
 		Field[] fields =cls.getDeclaredFields();
 		try {
 			Field field =cls.getDeclaredField( "contacts  " );
+			System.out.println(addressBook.getContacts());
+			field.setAccessible(true);
+			System.out.println(field.get(addressBook));
+			field.set(addressBook, null);
+			System.out.println(field.get(addressBook));
+			System.out.println(addressBook.getContacts());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
