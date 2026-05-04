@@ -24,8 +24,38 @@ public class ReflectionTest {
 		AddressBook addressBook = new AddressBook();
 		manipulateObject(addressBook);
 		invokeMethodOfAnObject(addressBook);
+		invokeConstructorsOfAnObject(cls3);
 	}
  
+	private static void invokeConstructorsOfAnObject(Class<?> cls) {
+	try {
+		cls.getConstructor().newInstance();
+		Object obj = cls.getConstructor().newInstance();
+		invokeMethodOfAnObject(obj);
+		System.out.println(obj);
+		System.out.println(cls.getConstructor().newInstance());
+	} catch (InstantiationException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IllegalAccessException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IllegalArgumentException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (InvocationTargetException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (NoSuchMethodException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (SecurityException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+	}
+
 	private static void invokeMethodOfAnObject(Object obj) {
 		Class<?> cls = obj.getClass();
 					try {
